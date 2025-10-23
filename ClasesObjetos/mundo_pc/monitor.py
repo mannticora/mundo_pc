@@ -6,5 +6,14 @@ class Monitor(DispositivoEntrada):
 
     def __init__(self, marca, tamano):
         Monitor.contador_monitores += 1
-        self. tamano = tamano
+        self.id_monitor = Monitor.contador_monitores
+        self.tamano = tamano
         super().__init__(marca)
+
+    def __str__(self):
+        return (f'id: {self}, Marca: {self.marca}'
+                f'Tamaño: {self.tamano}in')
+
+if __name__ == '__main__':
+    monitor1 = Monitor('Alien Ware', '10.5')
+    print(monitor1)
