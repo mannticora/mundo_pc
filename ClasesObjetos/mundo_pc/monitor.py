@@ -15,5 +15,7 @@ class Monitor(DispositivoEntrada):
                 f'Tamaño: {self.tamano} in')
 
 if __name__ == '__main__':
-    monitor1 = Monitor('Alien Ware', '10.5')
+    monitor1 = Monitor('Alien Ware', 10.5)
+    monitor2 = Monitor( 'HP', 16.3)
     print(monitor1)
+    print(monitor2)
