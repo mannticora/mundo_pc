@@ -2,23 +2,23 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# Ruta raíz
+# Ruta principal
 @app.route('/')
 def home():
-    return jsonify({"message": "Bienvenido a mi API en Python 🚀"})
+    return jsonify({"mensaje": "Bienvenido a mi API en Flask"})
 
-# Ruta GET para obtener datos
-@app.route('/saludo/<nombre>', methods=['GET'])
-def saludar(nombre):
+# Ruta para obtener datos (GET)
+@app.route('/api/saludo/<nombre>', methods=['GET'])
+def saludo(nombre):
     return jsonify({"saludo": f"Hola, {nombre}!"})
 
-# Ruta POST para recibir datos
-@app.route('/sumar', methods=['POST'])
+# Ruta para enviar datos (POST)
+@app.route('/api/sumar', methods=['POST'])
 def sumar():
-    data = request.get_json()
-    x = data.get('x')
-    y = data.get('y')
-    resultado = x + y
+    datos = request.get_json()
+    a = datos.get('a', 0)
+    b = datos.get('b', 0)
+    resultado = a + b
     return jsonify({"resultado": resultado})
 
 if __name__ == '__main__':
